@@ -1,0 +1,389 @@
+/* General Styles */
+@import url(https://fonts.googleapis.com/css?family=Gowun+Batang);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gowun Batang', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #1c2833;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #e74c3c;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section h2 {
+  font-size: 3.5rem;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.3rem;
+  z-index: 2;
+  opacity: 1;
+  margin-bottom: 30px;      
+  color: #1c2833;
+  font-weight: 600;
+}
+
+.hero-section .cta-btn {
+  background-color: #e74c3c;
+  font-family: inherit;
+  color: white;
+  padding: 5px 28px;
+  font-weight: 600;
+  border-radius: 5px;
+  z-index: 2;
+  width: fit-content;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+.hero-section .cta-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Slideshow Background Animation */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 18s ease-in-out 1;
+  opacity: 0.4;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideshow {
+  0% {
+      background-image: url('slide-show/10-Rules-for-Paper-Presentation-in-Conference.webp');
+  }
+  27% {
+      background-image: url('slide-show/Job-seeker-during-an-interview-facing-three-interviewers-1199x800.jpg');
+  }
+  50% {
+      background-image: url('slide-show/vecteezy_southeast-asian-young-adult-business-man-presentation-data_12970350.jpg');
+  }
+  75% {
+      background-image: url('slide-show/person-holding-speech-official-event.jpg');
+  }
+  100% {
+      background-image: url('slide-show/20230607PHT95601-cl.jpg');
+  }
+}
+
+/* About Section */
+#about {
+  padding: 40px 50px;
+  background-color: #2c3e50;
+  text-align: center;
+  color: white;
+}
+
+#about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#about p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.about-item {
+  background-color: #34495e;
+  border-radius: 8px;
+  padding: 10px;
+  width: calc(33% - 15px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.about-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.about-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #e74c3c;
+}
+
+.about-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .about-item {
+      width: calc(100% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-item {
+      width: 100%;
+  }
+}
+
+/* Features Section */
+#features {
+  padding: 80px 20px;
+  background-color: #34495e;
+  text-align: center;
+  color: white;
+}
+
+#features h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature {
+  background-color: #1c2833;
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #e74c3c;
+}
+
+.feature p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Section */
+#contact {
+  background-color: #1c2833;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .hero-section h2 {
+      font-size: 2.5rem;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .nav-links li a {
+      font-size: 1.2rem;
+  }
+
+  .features-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.personalized {
+  height: 45vh;
+  width: 60vh;
+  padding: 10px;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.flip-container {
+  width: 300px;
+  height: 350px;
+  display: inline-block;
+  padding: none;
+  margin: 0 10px 20px;
+  justify-content: space-between;
+}
+
+.flipper {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+.copyright {
+  position: relative;
+  top: 95px;
+  width: 100%;
+  background-color: #2c3e50; /* Dark color for background */
+  color: #ecf0f1; /* Lighter text color */
+  font-size: 14px;
+  text-align: center;
+  padding: none;
+}
